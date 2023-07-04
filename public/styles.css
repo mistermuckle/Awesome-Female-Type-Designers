@@ -16,8 +16,9 @@ body > header {
 
 body > nav {
   grid-column: 3/4;
-  grid-row: 1/4;
+  grid-row: 2/3;
   background-color: black;
+  inline-size: fit-content;
 }
 
 body > nav ul {
@@ -36,13 +37,32 @@ body > nav li a {
   text-decoration: none;
   color: inherit;
   display: block;
-  padding-inline: 0.25rem;
+  padding-inline: 1rem;
   padding-block: 0.5rem;
 }
 
 body > nav li a:hover {
   background-color: white;
   color: black;
+}
+
+@media (max-width: 600px) {
+  body {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  body > header {
+    grid-column: 1/2;
+  }
+
+  body > nav {
+    grid-column: 2/3;
+    inline-size: auto;
+  }
+
+  body > main {
+    grid-column: 1/2;
+  }
 }
 
 main {
@@ -248,7 +268,7 @@ dl {
   font-family: var(--default-font);
 }
 
-@container (min-width: 700px) {
+@container (min-width: 600px) {
   dl {
     float: right;
     inline-size: 50%;
